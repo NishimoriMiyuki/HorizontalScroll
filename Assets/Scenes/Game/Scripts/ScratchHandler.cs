@@ -3,7 +3,6 @@ using UnityEngine.EventSystems;
 
 public class ScratchHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    private int _dragCount = 0;
     private float _distance = 0f;
     private Vector2 _startPosition;
 
@@ -25,10 +24,8 @@ public class ScratchHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
         if (_distance >= MIN_DISTANCE)
         {
-            _dragCount++;
+            GameUIManager.Instance.DragCount();
         }
         _distance = 0f;
-
-        Debug.Log("DragCount = " + _dragCount);
     }
 }

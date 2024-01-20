@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daacd57d05b424e878151598826cda4b, type: 3}
   m_Name: StageData_0_1
   m_EditorClassIdentifier: 
-  StageDataList: []
+  StageDataList:
+  - id: 1001001
+    max_time: 5
+    required_number_scratches: 10
+    thing_address: Assets/Scenes/Game/Prefabs/Cushion
+    bg_address: 
+    bgm_address: 
