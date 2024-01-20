@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public enum GameState
@@ -7,24 +6,22 @@ public enum GameState
     Init,
     Start,
     Play,
-    End,
+    GameClear,
+    GameOver,
     Result,
 }
 
 public class GameManager : SingletonBehaviourSceneOnly<GameManager>
 {
-    [SerializeField]
-    private TimerController _timerController;
-
     private GameState _gameState;
     public GameState GameState => _gameState;
 
-    public void Init()
+    public async UniTask Init(Stage stage)
     {
         _gameState = GameState.Init;
 
-        // 仮の時間
-        _timerController.Init(10, GameEnd);
+        GameUIManager.Instance.Init(stage);
+        await MainSystem.Instance.AddressableManager.InstantiateAsync(stage.thing_address);
 
         GameStart();
     }
@@ -33,7 +30,8 @@ public class GameManager : SingletonBehaviourSceneOnly<GameManager>
     {
         _gameState = GameState.Start;
 
-        _timerController.StartTimer();
+        GameUIManager.Instance.StartTimer();
+        GamePlay();
     }
 
     private void GamePlay()
@@ -41,11 +39,20 @@ public class GameManager : SingletonBehaviourSceneOnly<GameManager>
         _gameState = GameState.Play;
     }
 
-    private void GameEnd()
+    public void GameClear()
     {
-        _gameState = GameState.End;
+        _gameState = GameState.GameClear;
 
-        Debug.Log("GameEnd");
+        Debug.Log("GameClear");
+
+        GameUIManager.Instance.StopTimer();
+    }
+
+    public void GameOver()
+    {
+        _gameState = GameState.GameOver;
+
+        Debug.Log("GameOver");
     }
 
     private void Result()

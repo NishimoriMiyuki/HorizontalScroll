@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 
@@ -10,13 +9,10 @@ public class TimerController : MonoBehaviour
     private bool _timerStarted;
     private float _currentTime;
 
-    private Action _timerEndedCallback;
-
-    public void Init(float maxTime, Action timerEndedCallback)
+    public void Init(float maxTime)
     {
         _timerStarted = false;
         _currentTime = maxTime;
-        _timerEndedCallback = timerEndedCallback;
     }
 
     private void Update()
@@ -29,7 +25,7 @@ public class TimerController : MonoBehaviour
         if (_currentTime <= 0)
         {
             _timerStarted = false;
-            _timerEndedCallback.Invoke();
+            GameManager.Instance.GameOver();
         }
 
         _currentTime -= Time.deltaTime;
@@ -43,5 +39,10 @@ public class TimerController : MonoBehaviour
     public void StartTimer()
     {
         _timerStarted = true;
+    }
+
+    public void StopTimer()
+    {
+        _timerStarted = false;
     }
 }

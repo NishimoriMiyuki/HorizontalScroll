@@ -16,7 +16,12 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 691a1c29147d9485dbf35e96350d2979
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 09cad50e3caab4f03a79127ec3c8658c
+    m_Address: Assets/Scenes/Game/Prefabs/Cushion
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 1f77aacb0f518434f8d5f36eadee7fb4, type: 2}
   m_SchemaSet:
