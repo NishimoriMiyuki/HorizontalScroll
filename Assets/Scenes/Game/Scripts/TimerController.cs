@@ -8,6 +8,7 @@ public class TimerController : MonoBehaviour
 
     private bool _timerStarted;
     private float _currentTime;
+    public int RestTime => (int)_currentTime;
 
     public void Init(float maxTime)
     {

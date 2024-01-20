@@ -8,12 +8,20 @@ public class GameUIManager : SingletonBehaviourSceneOnly<GameUIManager>
     [SerializeField]
     private TimerController _timerController;
 
+    [SerializeField]
+    private RectTransform _resultCanvas;
+
+    [SerializeField]
+    private ResultView _resultView;
+
     private int _currentDragNumber;
 
     private Stage _stage;
 
     public void Init(Stage stage)
     {
+        _resultCanvas.gameObject.SetActive(false);
+
         _stage = stage;
 
         _currentDragNumber = 0;
@@ -40,6 +48,12 @@ public class GameUIManager : SingletonBehaviourSceneOnly<GameUIManager>
     public void StopTimer()
     {
         _timerController.StopTimer();
+    }
+
+    public void OpenResultView(int bonus)
+    {
+        _resultView.SetScore(_timerController.RestTime, _currentDragNumber, bonus).Forget();
+        _resultCanvas.gameObject.SetActive(true);
     }
 
     private void CatDegreeUpdate()
