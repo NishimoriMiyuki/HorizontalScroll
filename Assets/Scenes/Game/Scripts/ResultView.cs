@@ -24,8 +24,11 @@ public class ResultView : MonoBehaviour
 
     public async UniTaskVoid SetScore(int restTime, int dragNumber, int bonus)
     {
-        await ScoreAnim(_timeScoreText, restTime);
-        await ScoreAnim(_scratchScoreText, dragNumber);
+        int restTimeMultiplier = 5;
+        int dragNumberMultiplier = 2;
+
+        await ScoreAnim(_timeScoreText, restTime * restTimeMultiplier);
+        await ScoreAnim(_scratchScoreText, dragNumber * dragNumberMultiplier);
         await ScoreAnim(_bonusScoreText, bonus);
         await ScoreAnim(_totalScoreText, (restTime + dragNumber + bonus));
     }
