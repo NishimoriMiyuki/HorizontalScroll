@@ -10,8 +10,12 @@ public class GameUIManager : SingletonBehaviourSceneOnly<GameUIManager>
 
     private int _currentDragNumber;
 
+    private Stage _stage;
+
     public void Init(Stage stage)
     {
+        _stage = stage;
+
         _currentDragNumber = 0;
         _catDegree.Init(stage.required_number_scratches);
         _timerController.Init(stage.max_time);
@@ -19,12 +23,32 @@ public class GameUIManager : SingletonBehaviourSceneOnly<GameUIManager>
 
     public void DragCount()
     {
+        if (GameManager.Instance.GameState != GameState.Play)
+        {
+            return;
+        }
+
         _currentDragNumber++;
-        _catDegree.SliderUpdate(_currentDragNumber);
+        CatDegreeUpdate();
     }
 
     public void StartTimer()
     {
         _timerController.StartTimer();
+    }
+
+    public void StopTimer()
+    {
+        _timerController.StopTimer();
+    }
+
+    private void CatDegreeUpdate()
+    {
+        _catDegree.SliderUpdate(_currentDragNumber);
+
+        if (_currentDragNumber == _stage.required_number_scratches)
+        {
+            GameManager.Instance.GameClear();
+        }
     }
 }

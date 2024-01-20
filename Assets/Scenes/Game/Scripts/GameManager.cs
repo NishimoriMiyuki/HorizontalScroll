@@ -31,6 +31,7 @@ public class GameManager : SingletonBehaviourSceneOnly<GameManager>
         _gameState = GameState.Start;
 
         GameUIManager.Instance.StartTimer();
+        GamePlay();
     }
 
     private void GamePlay()
@@ -38,9 +39,13 @@ public class GameManager : SingletonBehaviourSceneOnly<GameManager>
         _gameState = GameState.Play;
     }
 
-    private void GameClear()
+    public void GameClear()
     {
         _gameState = GameState.GameClear;
+
+        Debug.Log("GameClear");
+
+        GameUIManager.Instance.StopTimer();
     }
 
     public void GameOver()
