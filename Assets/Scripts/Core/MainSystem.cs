@@ -17,4 +17,8 @@ public class MainSystem : SingletonBehaviour<MainSystem>
     [SerializeField]
     private SoundManager _soundManager;
     public SoundManager SoundManager => _soundManager;
+
+    [SerializeField]
+    private MasterData _masterData;
+    public MasterData MasterData => _masterData;
 }
