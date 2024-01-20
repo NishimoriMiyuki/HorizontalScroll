@@ -18,6 +18,7 @@ public class ResultView : MonoBehaviour
         _scratchScoreText.text = null;
         _bonusScoreText.text = null;
         _totalScoreText.text = null;
+        _titleButton.interactable = false;
 
         _titleButton.onClick.AddListener(OnClickTitleButton);
     }
@@ -31,6 +32,8 @@ public class ResultView : MonoBehaviour
         await ScoreAnim(_scratchScoreText, dragNumber * dragNumberMultiplier);
         await ScoreAnim(_bonusScoreText, bonus);
         await ScoreAnim(_totalScoreText, (restTime + dragNumber + bonus));
+
+        _titleButton.interactable = true;
     }
 
     public void OnClickTitleButton()
