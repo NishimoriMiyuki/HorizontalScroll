@@ -7,6 +7,8 @@ public class ScratchHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     private float _distance = 0f;
     private Vector2 _startPosition;
 
+    private const float MIN_DISTANCE = 250f;
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         _startPosition = eventData.position;
@@ -21,7 +23,7 @@ public class ScratchHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     {
         _distance = Vector2.Distance(_startPosition, eventData.position);
 
-        if (_distance >= 300f)
+        if (_distance >= MIN_DISTANCE)
         {
             _dragCount++;
         }
