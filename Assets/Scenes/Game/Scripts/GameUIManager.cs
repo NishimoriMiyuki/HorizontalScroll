@@ -52,8 +52,15 @@ public class GameUIManager : SingletonBehaviourSceneOnly<GameUIManager>
 
     public void OpenResultView(int bonus)
     {
-        _resultView.SetScore(_timerController.RestTime, _currentDragNumber, bonus).Forget();
         _resultCanvas.gameObject.SetActive(true);
+
+        // ゲームオーバー時はタイムボーナスが入らない
+        if (bonus == 0)
+        {
+            _resultView.SetScore(0, _currentDragNumber, bonus).Forget();
+            return;
+        }
+        _resultView.SetScore(_timerController.RestTime, _currentDragNumber, bonus).Forget();
     }
 
     private void CatDegreeUpdate()

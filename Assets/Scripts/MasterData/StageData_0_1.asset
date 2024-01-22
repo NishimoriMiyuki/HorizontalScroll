@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageDataList:
   - id: 1001001
-    max_time: 10
+    max_time: 100
     required_number_scratches: 2
     thing_address: Assets/Scenes/Game/Prefabs/Cushion
-    bg_address: 
+    bg_address: Assets/Scenes/Game/Sprites/bg_house_living
     bgm_address: 
+    owner_group_id: 10001

@@ -17,4 +17,5 @@ public class Stage
     public string thing_address;
     public string bg_address;
     public string bgm_address;
+    public int owner_group_id;
 }

@@ -25,13 +25,13 @@ public class ResultView : MonoBehaviour
 
     public async UniTaskVoid SetScore(int restTime, int dragNumber, int bonus)
     {
-        int restTimeMultiplier = 5;
-        int dragNumberMultiplier = 2;
+        int timeBonus = restTime * 5;
+        int dragNumberBonus = dragNumber * 2;
 
-        await ScoreAnim(_timeScoreText, restTime * restTimeMultiplier);
-        await ScoreAnim(_scratchScoreText, dragNumber * dragNumberMultiplier);
+        await ScoreAnim(_timeScoreText, timeBonus);
+        await ScoreAnim(_scratchScoreText, dragNumberBonus);
         await ScoreAnim(_bonusScoreText, bonus);
-        await ScoreAnim(_totalScoreText, (restTime + dragNumber + bonus));
+        await ScoreAnim(_totalScoreText, (timeBonus + dragNumberBonus + bonus));
 
         _titleButton.interactable = true;
     }
@@ -43,7 +43,7 @@ public class ResultView : MonoBehaviour
 
     private async UniTask ScoreAnim(TextMeshProUGUI scoreText, int score)
     {
-        float duration = 0.8f;
+        float duration = 0.5f;
 
         int randomValue = Random.Range(0, 9999);
         await DOTween.To(() => randomValue, x => randomValue = x, score, duration)
