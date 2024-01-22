@@ -592,6 +592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stageData: {fileID: 11400000, guid: 44d7ea943b8374bc5946bb8f13a4a2f1, type: 2}
+  _ownerData: {fileID: 11400000, guid: 00c36dacd69584245a2f3ea6bf1e923f, type: 2}
 --- !u!1 &4031689580717058484
 GameObject:
   m_ObjectHideFlags: 0
