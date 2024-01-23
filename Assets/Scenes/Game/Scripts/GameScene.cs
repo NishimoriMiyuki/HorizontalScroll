@@ -9,12 +9,6 @@ public class GameScene : SceneBase
         await base.OnInitialize(args);
         Debug.Log("GameScene OnInitialize");
 
-        // 仮処理
-        if (args is not Stage stage)
-        {
-            stage = MainSystem.Instance.MasterData.StageData.FirstOrDefault();
-        }
-
-        await GameManager.Instance.Init(stage);
+        await GameManager.Instance.Init(MainSystem.Instance.PlayerData.NextStage.MasterStage);
     }
 }

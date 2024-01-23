@@ -21,4 +21,21 @@ public class MainSystem : SingletonBehaviour<MainSystem>
     [SerializeField]
     private MasterData _masterData;
     public MasterData MasterData => _masterData;
+
+    private PlayerData _playerData = new();
+    public PlayerData PlayerData { get => _playerData; set => _playerData = value; }
+
+    public SaveDataManager SaveDataManager = new();
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        SaveDataManager.Load();
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveDataManager.Save();
+    }
 }

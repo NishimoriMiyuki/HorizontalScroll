@@ -12,6 +12,7 @@ public class StageData : ScriptableObject
 public class Stage
 {
     public int id;
+    public int order;
     public float max_time;
     public int required_number_scratches;
     public string thing_address;
