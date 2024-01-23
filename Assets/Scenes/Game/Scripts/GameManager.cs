@@ -68,6 +68,7 @@ public class GameManager : SingletonBehaviourSceneOnly<GameManager>
 
         _gameUIManager.StopTimer();
         _cancellationTokenSource.Cancel();
+        MainSystem.Instance.PlayerData.AddNextStage();
         Result(CLEAR_BONUS);
     }
 

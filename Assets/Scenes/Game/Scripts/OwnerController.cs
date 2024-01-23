@@ -80,11 +80,13 @@ public class OwnerController : MonoBehaviour
 
         while (true)
         {
-            await UniTask.Delay(TimeSpan.FromSeconds(_ownerDataList[allActionCompletedCount].work_time), cancellationToken: _ct);
+            var owner = _ownerDataList[allActionCompletedCount];
+
+            await UniTask.Delay(TimeSpan.FromSeconds(owner.work_time), cancellationToken: _ct);
             FeelDisabled().Forget();
-            await UniTask.Delay(TimeSpan.FromSeconds(_ownerDataList[allActionCompletedCount].waiting_time), cancellationToken: _ct);
-            Monitor(_ownerDataList[allActionCompletedCount].monitor_time).Forget();
-            await UniTask.Delay(TimeSpan.FromSeconds(_ownerDataList[allActionCompletedCount].monitor_time), cancellationToken: _ct);
+            await UniTask.Delay(TimeSpan.FromSeconds(owner.waiting_time), cancellationToken: _ct);
+            Monitor(owner.monitor_time).Forget();
+            await UniTask.Delay(TimeSpan.FromSeconds(owner.monitor_time), cancellationToken: _ct);
             Work().Forget();
 
             allActionCompletedCount++;
