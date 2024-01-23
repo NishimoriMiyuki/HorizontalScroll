@@ -140,11 +140,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 6
-        y: 187
-        width: 70
-        height: 55
+        y: 188
+        width: 64
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,12 +160,12 @@ TextureImporter:
       name: numbers_01_1
       rect:
         serializedVersion: 2
-        x: 74
-        y: 187
-        width: 72
-        height: 55
+        x: 67
+        y: 189
+        width: 59
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,12 +181,12 @@ TextureImporter:
       name: numbers_01_2
       rect:
         serializedVersion: 2
-        x: 152
-        y: 186
-        width: 72
-        height: 55
+        x: 185
+        y: 188
+        width: 64
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,12 +202,12 @@ TextureImporter:
       name: numbers_01_3
       rect:
         serializedVersion: 2
-        x: 175
-        y: 99
-        width: 72
-        height: 55
+        x: 138
+        y: 100
+        width: 64
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,12 +223,12 @@ TextureImporter:
       name: numbers_01_4
       rect:
         serializedVersion: 2
-        x: 93
-        y: 99
-        width: 72
-        height: 55
+        x: 71
+        y: 100
+        width: 64
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,12 +244,12 @@ TextureImporter:
       name: numbers_01_5
       rect:
         serializedVersion: 2
-        x: 10
+        x: 6
         y: 14
-        width: 72
-        height: 55
+        width: 64
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -265,12 +265,12 @@ TextureImporter:
       name: numbers_01_6
       rect:
         serializedVersion: 2
-        x: 15
-        y: 100
-        width: 72
-        height: 55
+        x: 7
+        y: 101
+        width: 64
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -286,12 +286,12 @@ TextureImporter:
       name: numbers_01_7
       rect:
         serializedVersion: 2
-        x: 90
+        x: 70
         y: 13
-        width: 72
-        height: 55
+        width: 64
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -307,12 +307,12 @@ TextureImporter:
       name: numbers_01_8
       rect:
         serializedVersion: 2
-        x: 170
+        x: 134
         y: 13
-        width: 72
-        height: 55
+        width: 64
+        height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -320,6 +320,27 @@ TextureImporter:
       bones: []
       spriteID: 7b53e03f65b059048a1f1c9d985cd460
       internalID: 1813213844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: numbers_01_9
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 189
+        width: 64
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21bc490f8cd2e744fa6ac5dbd0efc3e3
+      internalID: 1679166364
       vertices: []
       indices: 
       edges: []
@@ -344,6 +365,7 @@ TextureImporter:
       numbers_01_6: -467008214
       numbers_01_7: -1364021637
       numbers_01_8: 1813213844
+      numbers_01_9: 1679166364
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
