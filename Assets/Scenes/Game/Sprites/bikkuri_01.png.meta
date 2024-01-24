@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8ff2cc885fa1e43ef8534add80aaffc1
+guid: 17b891a606f67dc4a8fc0bd3e686141b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -134,106 +134,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: symbol_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 414
-        width: 218
-        height: 244
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3bdc63fb8eba843448330af2fba19a02
-      internalID: -1044169676
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: symbol_1
-      rect:
-        serializedVersion: 2
-        x: 388
-        y: 420
-        width: 222
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e2105e12ad02f40e09abe6518054b52e
-      internalID: 217018644
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: symbol_2
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 66
-        height: 247
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dcc9e9f6c33824d37ad88c842864558b
-      internalID: 634367228
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: symbol_3
-      rect:
-        serializedVersion: 2
-        x: 445
-        y: 0
-        width: 148
-        height: 247
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a5a8d8eb1337f4160b9ba2cfd10e9eb0
-      internalID: 636762006
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f1518a574e39c4962add33ead9ae4958
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      symbol_0: -628463412
-      symbol_1: 1625136790
-      symbol_2: -1044169676
-      symbol_3: 217018644
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
