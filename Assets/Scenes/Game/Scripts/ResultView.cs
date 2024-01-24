@@ -12,19 +12,22 @@ public class ResultView : MonoBehaviour
     [SerializeField]
     private Button _titleButton;
 
+    private Tween _titleButtonTween;
+
     private void Awake()
     {
         _timeScoreText.text = null;
         _scratchScoreText.text = null;
         _bonusScoreText.text = null;
         _totalScoreText.text = null;
-        _titleButton.interactable = false;
 
         _titleButton.onClick.AddListener(OnClickTitleButton);
     }
 
     public async UniTaskVoid SetScore(int restTime, int dragNumber, int bonus)
     {
+        _titleButton.gameObject.SetActive(false);
+
         int timeBonus = restTime * 5;
         int dragNumberBonus = dragNumber * 2;
 
@@ -33,11 +36,15 @@ public class ResultView : MonoBehaviour
         await ScoreAnim(_bonusScoreText, bonus);
         await ScoreAnim(_totalScoreText, (timeBonus + dragNumberBonus + bonus));
 
-        _titleButton.interactable = true;
+        _titleButton.gameObject.SetActive(true);
+        _titleButtonTween = _titleButton.transform
+            .DOScale(1.2f, 0.4f)
+            .SetLoops(-1, LoopType.Yoyo);
     }
 
     public void OnClickTitleButton()
     {
+        _titleButtonTween.Kill();
         MainSystem.Instance.AppSceneManager.ChangeScene(ConstSceneName.Title, fadeType: FadeType.ColorWhite);
     }
 
