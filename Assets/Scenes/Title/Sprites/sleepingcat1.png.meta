@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4501519e1902746d1b913ef99add2de4
+guid: ec866fa1dbbc44c04a00003c90b6597f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -134,28 +134,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: bg_house_living_0
-      rect:
-        serializedVersion: 2
-        x: 125
-        y: 0
-        width: 631
-        height: 900
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7bf93f851c4684e08922e459b972488b
-      internalID: 912480457
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -166,8 +145,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      bg_house_living_0: 912480457
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

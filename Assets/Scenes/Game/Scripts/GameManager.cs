@@ -20,6 +20,9 @@ public class GameManager : SingletonBehaviourSceneOnly<GameManager>
     [SerializeField]
     private OwnerController _ownerController;
 
+    [SerializeField]
+    private CatController _catController;
+
     private GameState _gameState;
     public GameState GameState => _gameState;
 
@@ -41,7 +44,8 @@ public class GameManager : SingletonBehaviourSceneOnly<GameManager>
         var instance = await _addressableManager.InstantiateAsync(stage.thing_address);
         _thingController = instance.GetComponent<ThingController>();
         _stageBg.sprite = await _addressableManager.LoadAssetAsync<Sprite>(stage.bg_address);
-        _ownerController.Init(stage.owner_group_id, _cancellationTokenSource.Token);
+        _ownerController.Init(stage.owner_group_id, _cancellationTokenSource.Token).Forget();
+        _catController.Init(_cancellationTokenSource.Token);
 
         GameStart();
     }
@@ -96,5 +100,10 @@ public class GameManager : SingletonBehaviourSceneOnly<GameManager>
         {
             GameOver();
         }
+    }
+
+    public void CatNailSharpener()
+    {
+        _catController.NailSharpener().Forget();
     }
 }

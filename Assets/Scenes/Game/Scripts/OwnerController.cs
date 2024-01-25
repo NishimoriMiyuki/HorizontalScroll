@@ -4,6 +4,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public enum OwnerState
 {
@@ -16,14 +17,18 @@ public enum OwnerState
 public class OwnerController : MonoBehaviour
 {
     [SerializeField]
-    private SpriteRenderer _stateSprite;
+    private Image _stateImage;
 
     private OwnerState _ownerState;
     private List<Owner> _ownerDataList = new();
     private AddressableManager _addressableManager;
     private CancellationToken _ct;
 
-    public void Init(int ownerGroupId, CancellationToken ct)
+    private Sprite _workIcon;
+    private Sprite _feelDisabledIcon;
+    private Sprite _monitorIcon;
+
+    public async UniTaskVoid Init(int ownerGroupId, CancellationToken ct)
     {
         _ownerState = OwnerState.Init;
         Debug.Log("OwnerState.Init");
@@ -36,31 +41,38 @@ public class OwnerController : MonoBehaviour
             .OrderBy(owner => owner.order)
             .ToList();
 
-        Work().Forget();
+        _workIcon = await _addressableManager.LoadAssetAsync<Sprite>(ConstAssetAddress.WorkIcon);
+        _feelDisabledIcon = await _addressableManager.LoadAssetAsync<Sprite>(ConstAssetAddress.FeelDisabledIcon);
+        _monitorIcon = await _addressableManager.LoadAssetAsync<Sprite>(ConstAssetAddress.MonitorIcon);
+
+        Work();
     }
 
-    private async UniTaskVoid Work()
+    private void Work()
     {
+        _stateImage.sprite = _workIcon;
+
         _ownerState = OwnerState.Work;
         Debug.Log("OwnerState.Work");
-
-        _stateSprite.sprite = await _addressableManager.LoadAssetAsync<Sprite>(ConstAssetAddress.WorkIcon);
     }
 
-    private async UniTaskVoid FeelDisabled()
+    private void FeelDisabled()
     {
+        _stateImage.sprite = _feelDisabledIcon;
+
         _ownerState = OwnerState.FeelDisabled;
         Debug.Log("OwnerState.FeelDisabled");
-
-        _stateSprite.sprite = await _addressableManager.LoadAssetAsync<Sprite>(ConstAssetAddress.FeelDisabledIcon);
     }
 
     private async UniTaskVoid Monitor(float seconds)
     {
+        _stateImage.sprite = _monitorIcon;
+
+        // Iconが切り替わるタイミングでDragすると、Iconが切り替わる前にGameOverになってしまうので1フレ待ってる
+        await UniTask.NextFrame();
+
         _ownerState = OwnerState.Monitor;
         Debug.Log("OwnerState.Monitor");
-
-        _stateSprite.sprite = await _addressableManager.LoadAssetAsync<Sprite>(ConstAssetAddress.MonitorIcon);
 
         float elapsedTime = 0f;
 
@@ -69,11 +81,10 @@ public class OwnerController : MonoBehaviour
             GameManager.Instance.CheckScratch();
             await UniTask.NextFrame(cancellationToken: _ct);
             elapsedTime += Time.deltaTime;
-            Debug.Log("check中");
         }
     }
 
-    public async UniTask StartAction()
+    public async UniTaskVoid StartAction()
     {
         // 全ての行動が終わった回数を数える
         int allActionCompletedCount = 0;
@@ -83,11 +94,11 @@ public class OwnerController : MonoBehaviour
             var owner = _ownerDataList[allActionCompletedCount];
 
             await UniTask.Delay(TimeSpan.FromSeconds(owner.work_time), cancellationToken: _ct);
-            FeelDisabled().Forget();
+            FeelDisabled();
             await UniTask.Delay(TimeSpan.FromSeconds(owner.waiting_time), cancellationToken: _ct);
             Monitor(owner.monitor_time).Forget();
             await UniTask.Delay(TimeSpan.FromSeconds(owner.monitor_time), cancellationToken: _ct);
-            Work().Forget();
+            Work();
 
             allActionCompletedCount++;
 

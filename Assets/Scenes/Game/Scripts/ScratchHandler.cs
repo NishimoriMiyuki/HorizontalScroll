@@ -13,17 +13,22 @@ public class ScratchHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        Debug.Log("OnBeginDrag");
+
         _isDragging = true;
         _startPosition = eventData.position;
+
+        GameManager.Instance.CatNailSharpener();
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        Debug.Log("OnEndDrag");
+
         _isDragging = false;
         _distance = Vector2.Distance(_startPosition, eventData.position);
 
