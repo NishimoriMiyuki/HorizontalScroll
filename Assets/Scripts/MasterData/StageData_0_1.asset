@@ -31,8 +31,8 @@ MonoBehaviour:
     owner_group_id: 10001
   - id: 1001003
     order: 2
-    max_time: 100
-    required_number_scratches: 2
+    max_time: 999
+    required_number_scratches: 100
     thing_address: Assets/Scenes/Game/Prefabs/Cushion
     bg_address: Assets/Scenes/Game/Sprites/bg_house_living
     bgm_address: 

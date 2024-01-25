@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4501519e1902746d1b913ef99add2de4
+guid: a2f7fa59c50f6c7409597d7c9b109471
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -136,22 +136,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bg_house_living_0
+      name: start_button_01_0
       rect:
         serializedVersion: 2
-        x: 125
-        y: 0
-        width: 631
-        height: 900
+        x: 27
+        y: 202
+        width: 218
+        height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bf93f851c4684e08922e459b972488b
-      internalID: 912480457
+      spriteID: 34f274be31568a547be45be02290a232
+      internalID: -322980075
       vertices: []
       indices: 
       edges: []
@@ -159,15 +159,15 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 48965a1e0dbf356419a51bed3c5d70f1
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bg_house_living_0: 912480457
+      start_button_01_0: -322980075
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

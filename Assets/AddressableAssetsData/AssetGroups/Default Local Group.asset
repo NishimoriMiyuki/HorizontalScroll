@@ -27,18 +27,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c1d62b64952c34e65b7c02d48d89b099
-    m_Address: Assets/Scenes/Game/Sprites/pc
+  - m_GUID: 17b891a606f67dc4a8fc0bd3e686141b
+    m_Address: Assets/Scenes/Game/Sprites/bikkuri_01.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8ff2cc885fa1e43ef8534add80aaffc1
-    m_Address: Assets/Scenes/Game/Sprites/symbol
+  - m_GUID: 29ce782ba9a9e5a49bc9dd6b161271bc
+    m_Address: Assets/Scenes/Game/Sprites/me_01.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 460c8d9ff07a24a7785ec356ed8f90c4
-    m_Address: Assets/Scenes/Game/Sprites/eye12_side2
+  - m_GUID: 4ba598866a1801441b2902ed7b94aea5
+    m_Address: Assets/Scenes/Game/Sprites/pc_01.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
