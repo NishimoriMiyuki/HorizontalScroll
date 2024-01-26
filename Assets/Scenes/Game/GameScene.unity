@@ -210,6 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 390153839}
   - component: {fileID: 390153840}
+  - component: {fileID: 390153841}
   m_Layer: 0
   m_Name: SleepSprite
   m_TagString: Untagged
@@ -284,6 +285,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!111 &390153841
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390153838}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: b3e10df102cef48e18a2307448ac4af7, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: b3e10df102cef48e18a2307448ac4af7, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &393450699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1707,6 +1724,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2102090201}
   - component: {fileID: 2102090200}
+  - component: {fileID: 2102090202}
   m_Layer: 0
   m_Name: NailSharpenerSprite
   m_TagString: Untagged
@@ -1781,6 +1799,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1281345758}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!111 &2102090202
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102090199}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 13de73c54cbbe4b78ab967777366334d, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 13de73c54cbbe4b78ab967777366334d, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &3900498384399762093
 PrefabInstance:
   m_ObjectHideFlags: 0

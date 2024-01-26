@@ -1,4 +1,3 @@
-using System.Threading;
 using UnityEngine;
 
 public enum CatState
@@ -14,8 +13,6 @@ public class CatController : MonoBehaviour
 
     private CatState _catState;
     public CatState CatState => _catState;
-
-    private CancellationToken _ct;
 
     public const string PARAMETER_STATE_NUM = "StateNum";
 
