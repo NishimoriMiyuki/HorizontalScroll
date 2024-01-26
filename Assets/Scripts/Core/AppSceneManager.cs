@@ -36,7 +36,10 @@ public class AppSceneManager : MonoBehaviour
 
         await MainSystem.Instance.FadeManager.FadeOut(fadeType);
 
-        if (SceneManager.GetSceneByName(sceneName).IsValid())
+        // 今いるシーンと同じシーンが読み込まれた時
+        bool isReloadScene = SceneManager.loadedSceneCount == 1 && SceneManager.GetActiveScene().name == sceneName;
+
+        if (!isReloadScene && SceneManager.GetSceneByName(sceneName).IsValid())
         {
             await SceneManager.UnloadSceneAsync(sceneName).WithCancellation(_cancellationToken);
         }
@@ -44,6 +47,7 @@ public class AppSceneManager : MonoBehaviour
         await SceneManager.LoadSceneAsync(sceneName, loadSceneMode).WithCancellation(_cancellationToken);
 
         await Resources.UnloadUnusedAssets();
+        MainSystem.Instance.AddressableManager.ReleseAllAsset();
         System.GC.Collect();
 
         SceneBase nextSceneBase = await GetNextSceneBase(sceneName);

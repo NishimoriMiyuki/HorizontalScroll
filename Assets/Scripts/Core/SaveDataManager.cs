@@ -7,10 +7,10 @@ using UnityEngine;
 public class PlayerData
 {
     public List<PlayerStageData> stages = new();
-    public PlayerCatDegreeData cat_degree_data;
+    public PlayerCatDegreeData cat_degree;
+    public List<PlayerTitleData> titles = new();
 
     public PlayerStageData NextStage => stages.Last();
-    public int CatDegree => cat_degree_data.score;
 
     public void AddNextStage()
     {
@@ -31,9 +31,23 @@ public class PlayerData
         Debug.Log("Addした");
     }
 
+    public void AddTitle()
+    {
+        var whereTitles = MainSystem.Instance.MasterData.TitleData.Where(title => title.need_score <= cat_degree.score);
+
+        foreach (var title in whereTitles)
+        {
+            // 重複していない場合のみ追加
+            if (!titles.Any(t => t.title_id == title.id))
+            {
+                titles.Add(new PlayerTitleData { title_id = title.id });
+            }
+        }
+    }
+
     public void AddScore(int score)
     {
-        cat_degree_data.score += score;
+        cat_degree.score += score;
     }
 }
 
@@ -49,6 +63,14 @@ public class PlayerStageData
 public class PlayerCatDegreeData
 {
     public int score;
+}
+
+[Serializable]
+public class PlayerTitleData
+{
+    public int title_id;
+
+    public Title MasterTitle => MainSystem.Instance.MasterData.TitleData.FirstOrDefault(title => title.id == title_id);
 }
 
 public class SaveDataManager
@@ -80,6 +102,5 @@ public class SaveDataManager
     private void CreateInitData()
     {
         MainSystem.Instance.PlayerData.stages.Add(new PlayerStageData { stage_id = 1001001 });
-        MainSystem.Instance.PlayerData.cat_degree_data.score = 0;
     }
 }

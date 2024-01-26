@@ -43,6 +43,7 @@ public class ResultView : MonoBehaviour
             .SetLoops(-1, LoopType.Yoyo);
 
         MainSystem.Instance.PlayerData.AddScore(totalScore);
+        MainSystem.Instance.PlayerData.AddTitle();
     }
 
     public void OnClickTitleButton()
