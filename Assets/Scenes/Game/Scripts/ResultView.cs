@@ -10,9 +10,12 @@ public class ResultView : MonoBehaviour
     private TextMeshProUGUI _timeScoreText, _scratchScoreText, _bonusScoreText, _totalScoreText;
 
     [SerializeField]
-    private Button _titleButton;
+    private Button _titleButton, _gameButton;
 
-    private Tween _titleButtonTween;
+    [SerializeField]
+    private Image _gameButtonImage;
+
+    private Tween _titleButtonTween, _gameButtonTween;
 
     private void Awake()
     {
@@ -22,11 +25,20 @@ public class ResultView : MonoBehaviour
         _totalScoreText.text = null;
 
         _titleButton.onClick.AddListener(OnClickTitleButton);
+        _gameButton.onClick.AddListener(OnClickGameButton);
+    }
+
+    public void SetButtonImage(string address)
+    {
+        UniTask.Void(async () =>
+        {
+            _gameButtonImage.sprite = await MainSystem.Instance.AddressableManager.LoadAssetAsync<Sprite>(address);
+        });
     }
 
     public async UniTaskVoid SetScore(int restTime, int dragNumber, int bonus)
     {
-        _titleButton.gameObject.SetActive(false);
+        ButtonsSetActive(false);
 
         int timeBonus = restTime * 5;
         int dragNumberBonus = dragNumber * 2;
@@ -37,8 +49,13 @@ public class ResultView : MonoBehaviour
         await ScoreAnim(_bonusScoreText, bonus);
         await ScoreAnim(_totalScoreText, totalScore);
 
-        _titleButton.gameObject.SetActive(true);
+        ButtonsSetActive(true);
+
         _titleButtonTween = _titleButton.transform
+            .DOScale(1.2f, 0.4f)
+            .SetLoops(-1, LoopType.Yoyo);
+
+        _gameButtonTween = _gameButton.transform
             .DOScale(1.2f, 0.4f)
             .SetLoops(-1, LoopType.Yoyo);
 
@@ -46,10 +63,16 @@ public class ResultView : MonoBehaviour
         MainSystem.Instance.PlayerData.AddTitle();
     }
 
-    public void OnClickTitleButton()
+    private void OnClickTitleButton()
     {
-        _titleButtonTween.Kill();
+        TweensKill();
         MainSystem.Instance.AppSceneManager.ChangeScene(ConstSceneName.Title, fadeType: FadeType.ColorWhite);
+    }
+
+    private void OnClickGameButton()
+    {
+        TweensKill();
+        MainSystem.Instance.AppSceneManager.ChangeScene(ConstSceneName.Game, fadeType: FadeType.ColorWhite);
     }
 
     private async UniTask ScoreAnim(TextMeshProUGUI scoreText, int score)
@@ -59,5 +82,17 @@ public class ResultView : MonoBehaviour
         int randomValue = Random.Range(0, 9999);
         await DOTween.To(() => randomValue, x => randomValue = x, score, duration)
             .OnUpdate(() => scoreText.text = randomValue.ToString());
+    }
+
+    private void TweensKill()
+    {
+        _gameButtonTween.Kill();
+        _titleButtonTween.Kill();
+    }
+
+    private void ButtonsSetActive(bool isActive)
+    {
+        _titleButton.gameObject.SetActive(isActive);
+        _gameButton.gameObject.SetActive(isActive);
     }
 }
