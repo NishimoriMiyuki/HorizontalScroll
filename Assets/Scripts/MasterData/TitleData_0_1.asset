@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8aa94210034343cebf918714309233e, type: 3}
+  m_Name: TitleData_0_1
+  m_EditorClassIdentifier: 
+  TitleDataList:
+  - id: 1001
+    order: 0
+    name_address: Assets/Scenes/Game/Sprites/bikkuri_01.png
+    need_score: 1000
+  - id: 1002
+    order: 1
+    name_address: Assets/Scenes/Game/Sprites/me_01.png
+    need_score: 2000
