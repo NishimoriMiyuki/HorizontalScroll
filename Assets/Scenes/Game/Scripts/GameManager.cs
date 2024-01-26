@@ -73,7 +73,7 @@ public class GameManager : SingletonBehaviourSceneOnly<GameManager>
         _gameUIManager.StopTimer();
         _cancellationTokenSource.Cancel();
         MainSystem.Instance.PlayerData.AddNextStage();
-        Result(CLEAR_BONUS);
+        Result(ConstAssetAddress.NextStageButton, CLEAR_BONUS);
     }
 
     public void GameOver()
@@ -83,15 +83,15 @@ public class GameManager : SingletonBehaviourSceneOnly<GameManager>
         Debug.Log("GameOver");
 
         _cancellationTokenSource.Cancel();
-        Result();
+        Result(ConstAssetAddress.RetryStageButton);
     }
 
-    private void Result(int bonus = 0)
+    private void Result(string address, int bonus = 0)
     {
         _gameState = GameState.Result;
         Debug.Log("Result");
 
-        _gameUIManager.OpenResultView(bonus);
+        _gameUIManager.OpenResultView(bonus, address);
     }
 
     public void CheckScratch()

@@ -50,9 +50,10 @@ public class GameUIManager : SingletonBehaviourSceneOnly<GameUIManager>
         _timerController.StopTimer();
     }
 
-    public void OpenResultView(int bonus)
+    public void OpenResultView(int bonus, string address)
     {
         _resultCanvas.gameObject.SetActive(true);
+        _resultView.SetButtonImage(address);
 
         // ゲームオーバー時はタイムボーナスが入らない
         if (bonus == 0)
