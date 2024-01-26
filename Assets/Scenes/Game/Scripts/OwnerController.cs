@@ -69,7 +69,7 @@ public class OwnerController : MonoBehaviour
         _stateImage.sprite = _monitorIcon;
 
         // Iconが切り替わるタイミングでDragすると、Iconが切り替わる前にGameOverになってしまうので1フレ待ってる
-        await UniTask.NextFrame();
+        await UniTask.NextFrame(cancellationToken: _ct);
 
         _ownerState = OwnerState.Monitor;
         Debug.Log("OwnerState.Monitor");

@@ -30,6 +30,7 @@ public class GameManager : SingletonBehaviourSceneOnly<GameManager>
     private AddressableManager _addressableManager;
     private ThingController _thingController;
     private CancellationTokenSource _cancellationTokenSource;
+    public CancellationTokenSource CancellationTokenSource => _cancellationTokenSource;
 
     private readonly int CLEAR_BONUS = 1000;
 
