@@ -34,7 +34,7 @@ public class ScratchHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 {
                     GameManager.Instance.CatSleep();
                 }
-            });
+            }).AddTo(this);
 
         // OnPinterUpが発生してから1秒たったらCatSleepする
         this.OnPointerUpAsObservable()
@@ -42,8 +42,8 @@ public class ScratchHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
                 _disposable?.Dispose();
                 _disposable = Observable.Timer(TimeSpan.FromSeconds(0.5f))
                 .Do(_ => GameManager.Instance.CatSleep())
-                .Subscribe();
-            });
+                .Subscribe().AddTo(this);
+            }).AddTo(this);
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -78,12 +78,5 @@ public class ScratchHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     public void OnPointerUp(PointerEventData eventData)
     {
         _onPointerUpSubject.OnNext(Unit.Default);
-    }
-
-    private void OnDestroy()
-    {
-        _onPointerDownSubject.OnCompleted();
-        _onPointerUpSubject.OnCompleted();
-        _disposable?.Dispose();
     }
 }

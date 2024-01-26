@@ -1,4 +1,6 @@
+using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameUIManager : SingletonBehaviourSceneOnly<GameUIManager>
 {
@@ -14,6 +16,9 @@ public class GameUIManager : SingletonBehaviourSceneOnly<GameUIManager>
     [SerializeField]
     private ResultView _resultView;
 
+    [SerializeField]
+    private Button _titleButton;
+
     private int _currentDragNumber;
 
     private Stage _stage;
@@ -27,6 +32,8 @@ public class GameUIManager : SingletonBehaviourSceneOnly<GameUIManager>
         _currentDragNumber = 0;
         _catDegree.Init(stage.required_number_scratches);
         _timerController.Init(stage.max_time);
+
+        _titleButton.onClick.AddListener(OnClickTitleButton);
     }
 
     public void DragCount()
@@ -72,5 +79,11 @@ public class GameUIManager : SingletonBehaviourSceneOnly<GameUIManager>
         {
             GameManager.Instance.GameClear();
         }
+    }
+
+    private void OnClickTitleButton()
+    {
+        GameManager.Instance.CancellationTokenSource.Cancel();
+        MainSystem.Instance.AppSceneManager.ChangeScene(ConstSceneName.Title, fadeType: FadeType.ColorWhite);
     }
 }
