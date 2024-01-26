@@ -1,11 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
 
 public class TitleUIManager : MonoBehaviour
 {
     [SerializeField]
     private Button _startButton;
+
+    [SerializeField]
+    private TextMeshProUGUI _totalCatDegree;
 
     private Tween _startButtonTween;
 
@@ -15,6 +19,8 @@ public class TitleUIManager : MonoBehaviour
         _startButtonTween = _startButton.transform
             .DOScale(1.2f, 0.4f)
             .SetLoops(-1, LoopType.Yoyo);
+
+        _totalCatDegree.text = MainSystem.Instance.PlayerData.CatDegree.ToString();
     }
 
     private void OnClickStartButton()

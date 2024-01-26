@@ -7,8 +7,10 @@ using UnityEngine;
 public class PlayerData
 {
     public List<PlayerStageData> stages = new();
+    public PlayerCatDegreeData cat_degree_data;
 
     public PlayerStageData NextStage => stages.Last();
+    public int CatDegree => cat_degree_data.score;
 
     public void AddNextStage()
     {
@@ -28,6 +30,11 @@ public class PlayerData
         stages.Add(new PlayerStageData { stage_id = orderStageData[index + 1].id });
         Debug.Log("Addした");
     }
+
+    public void AddScore(int score)
+    {
+        cat_degree_data.score += score;
+    }
 }
 
 [Serializable]
@@ -36,6 +43,12 @@ public class PlayerStageData
     public int stage_id;
 
     public Stage MasterStage => MainSystem.Instance.MasterData.StageData.FirstOrDefault(stage => stage.id == stage_id);
+}
+
+[Serializable]
+public class PlayerCatDegreeData
+{
+    public int score;
 }
 
 public class SaveDataManager
@@ -67,5 +80,6 @@ public class SaveDataManager
     private void CreateInitData()
     {
         MainSystem.Instance.PlayerData.stages.Add(new PlayerStageData { stage_id = 1001001 });
+        MainSystem.Instance.PlayerData.cat_degree_data.score = 0;
     }
 }

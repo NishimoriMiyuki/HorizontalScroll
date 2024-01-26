@@ -30,16 +30,19 @@ public class ResultView : MonoBehaviour
 
         int timeBonus = restTime * 5;
         int dragNumberBonus = dragNumber * 2;
+        int totalScore = timeBonus + dragNumberBonus + bonus;
 
         await ScoreAnim(_timeScoreText, timeBonus);
         await ScoreAnim(_scratchScoreText, dragNumberBonus);
         await ScoreAnim(_bonusScoreText, bonus);
-        await ScoreAnim(_totalScoreText, (timeBonus + dragNumberBonus + bonus));
+        await ScoreAnim(_totalScoreText, totalScore);
 
         _titleButton.gameObject.SetActive(true);
         _titleButtonTween = _titleButton.transform
             .DOScale(1.2f, 0.4f)
             .SetLoops(-1, LoopType.Yoyo);
+
+        MainSystem.Instance.PlayerData.AddScore(totalScore);
     }
 
     public void OnClickTitleButton()
