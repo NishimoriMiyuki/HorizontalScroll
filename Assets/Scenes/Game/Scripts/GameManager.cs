@@ -45,7 +45,7 @@ public class GameManager : SingletonBehaviourSceneOnly<GameManager>
         _thingController = instance.GetComponent<ThingController>();
         _stageBg.sprite = await _addressableManager.LoadAssetAsync<Sprite>(stage.bg_address);
         _ownerController.Init(stage.owner_group_id, _cancellationTokenSource.Token).Forget();
-        _catController.Init(_cancellationTokenSource.Token);
+        _catController.Init();
 
         GameStart();
     }
@@ -104,6 +104,11 @@ public class GameManager : SingletonBehaviourSceneOnly<GameManager>
 
     public void CatNailSharpener()
     {
-        _catController.NailSharpener().Forget();
+        _catController.NailSharpener();
+    }
+
+    public void CatSleep()
+    {
+        _catController.Sleep();
     }
 }

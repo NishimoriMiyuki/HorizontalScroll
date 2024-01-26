@@ -1,5 +1,4 @@
 using System.Threading;
-using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public enum CatState
@@ -11,10 +10,7 @@ public enum CatState
 public class CatController : MonoBehaviour
 {
     [SerializeField]
-    private Animator _animator;
-
-    [SerializeField]
-    private SpriteRenderer _stateSprite;
+    private SpriteRenderer _sleepSprite, _nailSharpenerSprite;
 
     private CatState _catState;
     public CatState CatState => _catState;
@@ -23,33 +19,24 @@ public class CatController : MonoBehaviour
 
     public const string PARAMETER_STATE_NUM = "StateNum";
 
-    public void Init(CancellationToken ct)
+    public void Init()
     {
-        _ct = ct;
-
         Sleep();
     }
 
     public void Sleep()
     {
         _catState = CatState.Sleep;
-        _animator.SetInteger(PARAMETER_STATE_NUM, (int)CatState.Sleep);
+
+        _sleepSprite.gameObject.SetActive(true);
+        _nailSharpenerSprite.gameObject.SetActive(false);
     }
 
-    public async UniTaskVoid NailSharpener()
+    public void NailSharpener()
     {
         _catState = CatState.NailSharpener;
-        _animator.SetInteger(PARAMETER_STATE_NUM, (int)CatState.NailSharpener);
 
-        float elapsedTime = 0f;
-        float seconds = 0.5f;
-
-        while (elapsedTime < seconds)
-        {
-            await UniTask.NextFrame(cancellationToken: _ct);
-            elapsedTime += Time.deltaTime;
-        }
-
-        Sleep();
+        _sleepSprite.gameObject.SetActive(false);
+        _nailSharpenerSprite.gameObject.SetActive(true);
     }
 }
