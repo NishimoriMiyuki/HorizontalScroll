@@ -18,8 +18,6 @@ public class TitleUIManager : MonoBehaviour
     [SerializeField]
     private GameObject _controlCanvas;
 
-    private Tween _startButtonTween;
-
     public async UniTask Init()
     {
         await _titleView.Init();
@@ -29,16 +27,11 @@ public class TitleUIManager : MonoBehaviour
         _startButton.onClick.AddListener(OnClickStartButton);
         _titleViewButton.onClick.AddListener(OnClickTitleViewButton);
 
-        _startButtonTween = _startButton.transform
-            .DOScale(1.2f, 0.4f)
-            .SetLoops(-1, LoopType.Yoyo);
-
         _totalCatDegree.text = MainSystem.Instance.PlayerData.cat_degree.score.ToString();
     }
 
     private void OnClickStartButton()
     {
-        _startButtonTween.Kill();
         MainSystem.Instance.AppSceneManager.ChangeScene(ConstSceneName.Game, fadeType: FadeType.ColorWhite);
     }
 
@@ -46,10 +39,5 @@ public class TitleUIManager : MonoBehaviour
     {
         _controlCanvas.SetActive(false);
         _titleView.gameObject.SetActive(true);
-    }
-
-    private void OnDestroy()
-    {
-        _startButtonTween.Kill();
     }
 }
