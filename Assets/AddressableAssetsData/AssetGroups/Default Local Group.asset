@@ -47,6 +47,81 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f73ff920aac3844a1b8f5b8dca29b1ec
+    m_Address: Assets/Scenes/Title/Sprites/UI/syougou_02.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2b5d353541cf8476ea676a7a0c92c874
+    m_Address: Assets/Scenes/Title/Sprites/UI/syougou_03.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 468b3c642bb6c4e7b8e918cfbd215da1
+    m_Address: Assets/Scenes/Title/Sprites/UI/syougou_04.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f4f553b943d404b69be643affa5151ce
+    m_Address: Assets/Scenes/Title/Sprites/UI/syougou_05.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 414e3ed26077241d1b323f1b89a4861e
+    m_Address: Assets/Scenes/Title/Sprites/UI/syougou_06.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c148696e6cfa547da85b65acce180aaf
+    m_Address: Assets/Scenes/Title/Sprites/UI/syougou_07.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 154fc377f604446f1adae407e59fed71
+    m_Address: Assets/Scenes/Title/Sprites/UI/syougou_08.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4955bb1d9b4d14949b4a567742b89f26
+    m_Address: Assets/Scenes/Title/Sprites/UI/syougou_09.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 47180b9c967944381b52069e594b5f31
+    m_Address: Assets/Scenes/Title/Sprites/UI/syougou_10.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f8eb1ebb546d748318ed19d1e3522d85
+    m_Address: Assets/Scenes/Title/Sprites/UI/syougou_11.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d95fbfee43e5049ad9b0c28517d91dce
+    m_Address: Assets/Scenes/Title/Sprites/UI/syougou_12.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7f8bb569b785244c8b761300aa301656
+    m_Address: Assets/Scenes/Title/Sprites/UI/syougou_13.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: de98c08bcb75e45b587f77bfd7ecfed4
+    m_Address: Assets/Scenes/Title/Sprites/UI/syougou_14.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 665cba54c88d44a84a696ad39babbb5f
+    m_Address: Assets/Scenes/Title/Sprites/UI/syougou_15.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e1ddf777d196e40a689ca74ccb149445
+    m_Address: Assets/Scenes/Game/Sprites/UI/result_moji_02.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 1f77aacb0f518434f8d5f36eadee7fb4, type: 2}
   m_SchemaSet:

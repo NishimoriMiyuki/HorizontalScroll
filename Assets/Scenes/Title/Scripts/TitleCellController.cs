@@ -8,7 +8,7 @@ public class TitleCellController : MonoBehaviour
     [SerializeField]
     private Image _titleImage, _possessionImage;
 
-    public async UniTask Init(Title titleData)
+    public async UniTaskVoid Init(Title titleData)
     {
         _titleImage.sprite = await MainSystem.Instance.AddressableManager.LoadAssetAsync<Sprite>(titleData.name_address);
         _possessionImage.gameObject.SetActive(true);

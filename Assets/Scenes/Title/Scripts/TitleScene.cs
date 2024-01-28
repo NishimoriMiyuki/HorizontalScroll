@@ -11,6 +11,6 @@ public class TitleScene : SceneBase
         await base.OnInitialize(args);
         Debug.Log("TitleScene OnInitialize");
 
-        await _titleUIManager.Init();
+        _titleUIManager.Init();
     }
 }

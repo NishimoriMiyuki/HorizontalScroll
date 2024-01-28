@@ -51,10 +51,13 @@ SpriteAtlas:
     isAtlasV2: 0
     cachedData: {fileID: 0}
     packedSpriteRenderDataKeys:
+    - 37c6b780f985b4aeba640650b19140cc: 21300000
     - 2fbe3ad139682bd43b1636144a9f7443: 828675256
     - 4ba598866a1801441b2902ed7b94aea5: 21300000
     - 17b891a606f67dc4a8fc0bd3e686141b: 21300000
     - 677c8057d302449f0b892640ea6b19bc: 21300000
+    - e1ddf777d196e40a689ca74ccb149445: 319028512
+    - e1ddf777d196e40a689ca74ccb149445: -1430936332
     - d033d2fafeb2a4daaa3378443c31f686: 21300000
     - 53aaea1b38a149144a04f00957150f28: -2111169754
     - 53aaea1b38a149144a04f00957150f28: 2032639937
@@ -65,10 +68,13 @@ SpriteAtlas:
     - 29ce782ba9a9e5a49bc9dd6b161271bc: 21300000
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: 37c6b780f985b4aeba640650b19140cc, type: 3}
   - {fileID: 828675256, guid: 2fbe3ad139682bd43b1636144a9f7443, type: 3}
   - {fileID: 21300000, guid: 4ba598866a1801441b2902ed7b94aea5, type: 3}
   - {fileID: 21300000, guid: 17b891a606f67dc4a8fc0bd3e686141b, type: 3}
   - {fileID: 21300000, guid: 677c8057d302449f0b892640ea6b19bc, type: 3}
+  - {fileID: 319028512, guid: e1ddf777d196e40a689ca74ccb149445, type: 3}
+  - {fileID: -1430936332, guid: e1ddf777d196e40a689ca74ccb149445, type: 3}
   - {fileID: 21300000, guid: d033d2fafeb2a4daaa3378443c31f686, type: 3}
   - {fileID: -2111169754, guid: 53aaea1b38a149144a04f00957150f28, type: 3}
   - {fileID: 2032639937, guid: 53aaea1b38a149144a04f00957150f28, type: 3}
@@ -78,10 +84,13 @@ SpriteAtlas:
   - {fileID: -1709775972, guid: 53aaea1b38a149144a04f00957150f28, type: 3}
   - {fileID: 21300000, guid: 29ce782ba9a9e5a49bc9dd6b161271bc, type: 3}
   m_PackedSpriteNamesToIndex:
+  - back_button_01
   - nikukyu_01_0
   - pc_01
   - bikkuri_01
   - sleepingcat1
+  - result_moji_02_0
+  - result_moji_02_1
   - cat_tumetogi
   - Result_head_01_4
   - Result_head_01_5

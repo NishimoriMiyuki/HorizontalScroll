@@ -13,18 +13,18 @@ public class TitleView : MonoBehaviour
     [SerializeField]
     private Button _backButton;
 
-    public async UniTask Init()
+    public void Init()
     {
-        await CreateCell();
+        CreateCell();
         _backButton.onClick.AddListener(OnClickBackButton);
     }
 
-    private async UniTask CreateCell()
+    private void CreateCell()
     {
         foreach (var title in MainSystem.Instance.MasterData.TitleData)
         {
             var instance = Instantiate(_titleCellController, _content);
-            await instance.Init(title);
+            instance.Init(title).Forget();
         }
     }
 

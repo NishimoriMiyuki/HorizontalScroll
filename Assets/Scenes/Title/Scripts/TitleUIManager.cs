@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
 using TMPro;
 using Cysharp.Threading.Tasks;
 
@@ -18,9 +17,9 @@ public class TitleUIManager : MonoBehaviour
     [SerializeField]
     private GameObject _controlCanvas;
 
-    public async UniTask Init()
+    public void Init()
     {
-        await _titleView.Init();
+        _titleView.Init();
 
         _titleView.gameObject.SetActive(false);
 

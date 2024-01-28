@@ -19,5 +19,57 @@ MonoBehaviour:
     need_score: 1000
   - id: 1002
     order: 1
-    name_address: Assets/Scenes/Title/Sprites/UI/syougou_01.png
-    need_score: 2000
+    name_address: Assets/Scenes/Title/Sprites/UI/syougou_02.png
+    need_score: 10000
+  - id: 1003
+    order: 2
+    name_address: Assets/Scenes/Title/Sprites/UI/syougou_03.png
+    need_score: 20000
+  - id: 1004
+    order: 3
+    name_address: Assets/Scenes/Title/Sprites/UI/syougou_04.png
+    need_score: 30000
+  - id: 1005
+    order: 4
+    name_address: Assets/Scenes/Title/Sprites/UI/syougou_05.png
+    need_score: 40000
+  - id: 1006
+    order: 5
+    name_address: Assets/Scenes/Title/Sprites/UI/syougou_06.png
+    need_score: 50000
+  - id: 1007
+    order: 6
+    name_address: Assets/Scenes/Title/Sprites/UI/syougou_07.png
+    need_score: 60000
+  - id: 1008
+    order: 7
+    name_address: Assets/Scenes/Title/Sprites/UI/syougou_08.png
+    need_score: 70000
+  - id: 1009
+    order: 8
+    name_address: Assets/Scenes/Title/Sprites/UI/syougou_09.png
+    need_score: 80000
+  - id: 1010
+    order: 9
+    name_address: Assets/Scenes/Title/Sprites/UI/syougou_10.png
+    need_score: 90000
+  - id: 1011
+    order: 10
+    name_address: Assets/Scenes/Title/Sprites/UI/syougou_11.png
+    need_score: 100000
+  - id: 1012
+    order: 11
+    name_address: Assets/Scenes/Title/Sprites/UI/syougou_12.png
+    need_score: 110000
+  - id: 1013
+    order: 12
+    name_address: Assets/Scenes/Title/Sprites/UI/syougou_13.png
+    need_score: 120000
+  - id: 1014
+    order: 13
+    name_address: Assets/Scenes/Title/Sprites/UI/syougou_14.png
+    need_score: 130000
+  - id: 1015
+    order: 14
+    name_address: Assets/Scenes/Title/Sprites/UI/syougou_15.png
+    need_score: 140000
