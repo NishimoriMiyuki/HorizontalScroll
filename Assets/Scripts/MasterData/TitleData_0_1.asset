@@ -15,9 +15,9 @@ MonoBehaviour:
   TitleDataList:
   - id: 1001
     order: 0
-    name_address: Assets/Scenes/Game/Sprites/bikkuri_01.png
+    name_address: Assets/Scenes/Title/Sprites/UI/syougou_01.png
     need_score: 1000
   - id: 1002
     order: 1
-    name_address: Assets/Scenes/Game/Sprites/me_01.png
+    name_address: Assets/Scenes/Title/Sprites/UI/syougou_01.png
     need_score: 2000
